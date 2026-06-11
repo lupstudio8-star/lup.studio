@@ -1,328 +1,1466 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport"><link rel="icon" type="image/png" href="./assets/favicon.png"><meta name="description" content="Organização, estrutura e tecnologia para negócios em crescimento. Profissionalize sua presença digital com a LUP.">
-<title>LUP. | Estrutura Digital para Negócios em Crescimento</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary-fixed": "#1a1c1b",
-                        "on-tertiary-container": "#848484",
-                        "on-tertiary-fixed-variant": "#464747",
-                        "surface-variant": "#e2e2e2",
-                        "inverse-surface": "#2f3131",
-                        "surface-container-highest": "#e2e2e2",
-                        "error-container": "#ffdad6",
-                        "surface-dim": "#dadada",
-                        "on-surface": "#1a1c1c",
-                        "surface-tint": "#5f5e5e",
-                        "secondary-container": "#e0dfde",
-                        "surface-bright": "#f9f9f9",
-                        "on-tertiary": "#ffffff",
-                        "primary": "#000000",
-                        "on-primary-fixed-variant": "#474646",
-                        "primary-fixed-dim": "#c8c6c5",
-                        "tertiary": "#000000",
-                        "on-error-container": "#93000a",
-                        "error": "#ba1a1a",
-                        "on-primary": "#ffffff",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#e5e2e1",
-                        "on-secondary-fixed-variant": "#464746",
-                        "on-primary-fixed": "#1c1b1b",
-                        "background": "#f9f9f9",
-                        "on-error": "#ffffff",
-                        "secondary-fixed-dim": "#c7c6c5",
-                        "on-background": "#1a1c1c",
-                        "on-tertiary-fixed": "#1b1c1c",
-                        "primary-container": "#1c1b1b",
-                        "inverse-primary": "#c8c6c5",
-                        "inverse-on-surface": "#f0f1f1",
-                        "secondary": "#5e5e5d",
-                        "on-primary-container": "#858383",
-                        "surface-container": "#eeeeee",
-                        "surface": "#f9f9f9",
-                        "secondary-fixed": "#e3e2e0",
-                        "tertiary-fixed-dim": "#c7c6c6",
-                        "surface-container-high": "#e8e8e8",
-                        "on-surface-variant": "#444748",
-                        "tertiary-container": "#1b1c1c",
-                        "on-secondary-container": "#626361",
-                        "outline": "#747878",
-                        "tertiary-fixed": "#e3e2e2",
-                        "surface-container-lowest": "#ffffff",
-                        "outline-variant": "#c4c7c7",
-                        "surface-container-low": "#f3f3f4"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "stack-sm": "24px",
-                        "stack-md": "48px",
-                        "container-max": "1280px",
-                        "stack-lg": "80px",
-                        "gutter": "24px",
-                        "margin-x": "32px"
-                    },
-                    "fontFamily": {
-                        "headline-xl-mobile": ["Playfair Display"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "headline-xl": ["Playfair Display"],
-                        "body-sm": ["Plus Jakarta Sans"],
-                        "headline-lg": ["Playfair Display"],
-                        "headline-sm": ["Plus Jakarta Sans"],
-                        "headline-md": ["Playfair Display"],
-                        "label-caps": ["Plus Jakarta Sans"],
-                        "body-lg": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "headline-xl-mobile": ["40px", { "lineHeight": "1.1", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
-                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
-                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            font-size: 24px;
-        }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .stagger-item { opacity: 0; transform: translateY(15px); transition: all 0.6s ease-out; }
-        .stagger-item.active { opacity: 1; transform: translateY(0); }
-    </style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A LUP Studio estrutura a presença digital de profissionais e pequenos negócios — sites, Google Business, WhatsApp profissional e muito mais.">
+  <title>LUP Studio | Estrutura Digital para Negócios em Crescimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #0D0F1A;
+      --dark2:   #13162A;
+      --dark3:   #1C2038;
+      --accent:  #4F8EF7;
+      --accent2: #7AB3FF;
+      --gold:    #C9A84C;
+      --white:   #FFFFFF;
+      --gray1:   #F0F2F8;
+      --gray2:   #A8B0C8;
+      --gray3:   #5A6280;
+      --radius:  12px;
+      --font-display: 'DM Serif Display', serif;
+      --font-body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* DM Serif Display only has weight 400 — override all heading weights */
+    h1, h2, h3, h4,
+    .nav-logo, .section-title, .plano-name, .price-main,
+    .form-title, .step h3, .servico-card h3,
+    .manifesto h2, .contato-left h2, .footer-logo,
+    .problema-quote, .stat-number, .hero h1 {
+      font-weight: 400 !important;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(13,15,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 0 24px rgba(79,142,247,0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+      box-shadow: 0 0 32px rgba(79,142,247,0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-ghost {
+      background: rgba(79,142,247,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(79,142,247,0.2);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(79,142,247,0.2);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(79,142,247,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(79,142,247,0.1);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 76px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--gray2);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 72px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.2px;
+    }
+
+    .stat-number span { color: var(--accent); }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray2);
+      text-align: center;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--gray2);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* Force display font on all major headings */
+    h1, h2, h3,
+    .section-title,
+    .plano-name,
+    .form-title,
+    .manifesto h2,
+    .contato-left h2,
+    .step h3,
+    .servico-card h3 {
+      font-family: var(--font-display) !important;
+    }
+
+    /* ── PROBLEMA ── */
+    .problema {
+      padding: 100px 0;
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .problema-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .problema-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .problema-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      font-size: 15px;
+      color: var(--gray2);
+      transition: border-color 0.2s;
+    }
+
+    .problema-list li:hover {
+      border-color: rgba(79,142,247,0.3);
+      color: var(--white);
+    }
+
+    .problema-list .icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .problema-right {
+      background: linear-gradient(135deg, var(--dark3), rgba(79,142,247,0.05));
+      border: 1px solid rgba(79,142,247,0.15);
+      border-radius: 20px;
+      padding: 48px;
+    }
+
+    .problema-quote {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .problema-quote em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .problema-desc {
+      font-size: 15px;
+      color: var(--gray2);
+      line-height: 1.7;
+    }
+
+    /* ── COMO TRABALHAMOS ── */
+    .como {
+      padding: 100px 0;
+    }
+
+    .como-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .como-header .section-sub {
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .step {
+      background: var(--dark2);
+      padding: 40px 32px;
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .step:hover { background: var(--dark3); }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(79,142,247,0.15);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .step-icon {
+      width: 44px; height: 44px;
+      background: rgba(79,142,247,0.1);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--gray2);
+      line-height: 1.6;
+    }
+
+    /* ── SERVIÇOS ── */
+    .servicos {
+      padding: 100px 0;
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .servicos-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .servicos-header .section-sub { margin: 0 auto; }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .servico-card {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 36px;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .servico-card:hover {
+      border-color: rgba(79,142,247,0.3);
+      transform: translateY(-3px);
+    }
+
+    .servico-icon {
+      width: 52px; height: 52px;
+      background: rgba(79,142,247,0.08);
+      border: 1px solid rgba(79,142,247,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .servico-card h3 {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .servico-card p {
+      font-size: 15px;
+      color: var(--gray2);
+      line-height: 1.7;
+    }
+
+    /* ── PARA QUEM É ── */
+    .para-quem {
+      padding: 100px 0;
+    }
+
+    .para-quem-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .perfis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .perfil-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray2);
+      transition: all 0.2s;
+    }
+
+    .perfil-tag:hover {
+      border-color: rgba(79,142,247,0.3);
+      color: var(--white);
+      background: rgba(79,142,247,0.05);
+    }
+
+    .perfil-tag span { font-size: 18px; }
+
+    .para-quem-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .signal-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .signal-card .signal-icon { font-size: 20px; flex-shrink: 0; }
+    .signal-card strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .signal-card p { font-size: 13px; color: var(--gray2); line-height: 1.5; }
+
+    /* ── PLANOS ── */
+    .planos {
+      padding: 100px 0;
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .planos-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .planos-header .section-sub { margin: 0 auto; }
+
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .plano-card {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.3s;
+    }
+
+    .plano-card:hover { transform: translateY(-4px); }
+
+    .plano-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(79,142,247,0.15);
+    }
+
+    .plano-badge {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px;
+    }
+
+    .plano-header {
+      padding: 32px 32px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .plano-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .plano-sub {
+      font-size: 13px;
+      color: var(--gray2);
+      margin-bottom: 24px;
+    }
+
+    .plano-price {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .price-setup {
+      font-size: 13px;
+      color: var(--gray3);
+    }
+
+    .price-main {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .price-main small {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--gray2);
+    }
+
+    .price-recurrence {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .plano-features {
+      padding: 28px 32px;
+      flex: 1;
+    }
+
+    .plano-features ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plano-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray2);
+      line-height: 1.4;
+    }
+
+    .plano-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .plano-cta {
+      padding: 24px 32px 32px;
+    }
+
+    .plano-cta .btn { width: 100%; justify-content: center; }
+
+    /* Consulta card */
+    .plano-card.consulta .plano-header { border-bottom: none; }
+    .price-main.consulta-price { font-size: 28px; color: var(--gray2); }
+
+    /* ── MANIFESTO ── */
+    .manifesto {
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .manifesto-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .manifesto h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+
+    .manifesto h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .manifesto p {
+      font-size: 18px;
+      color: var(--gray2);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .manifesto-values {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+
+    .manifesto-value {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .value-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .value-label {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    /* ── CONTATO ── */
+    .contato {
+      padding: 100px 0;
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contato-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contato-left h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .contato-left h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .contato-left p {
+      font-size: 16px;
+      color: var(--gray2);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .contato-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--gray2);
+    }
+
+    .contato-item a { color: var(--gray2); text-decoration: none; transition: color 0.2s; }
+    .contato-item a:hover { color: var(--accent); }
+
+    .contato-item-icon {
+      width: 36px; height: 36px;
+      background: rgba(79,142,247,0.08);
+      border: 1px solid rgba(79,142,247,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* FORM */
+    .form-card {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .form-subtitle {
+      font-size: 14px;
+      color: var(--gray2);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray2);
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray3); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: rgba(79,142,247,0.05);
+    }
+
+    .form-group select option { background: var(--dark2); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 14px;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray3);
+      margin-top: 12px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+
+    .form-success .success-icon { font-size: 48px; margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .form-success p { font-size: 15px; color: var(--gray2); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--gray3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--gray3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,0.3), transparent);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .problema-inner,
+      .para-quem-inner,
+      .contato-inner { grid-template-columns: 1fr; gap: 40px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .planos-grid { grid-template-columns: 1fr; }
+      .perfis-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .steps { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-md dock full-width top-0 sticky z-50 border-b border-outline-variant/10">
-<nav class="flex justify-between items-center px-margin-x py-6 w-full max-w-container-max mx-auto">
-<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-on-primary">LUP.</div>
-<!-- Desktop Links -->
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-caps text-label-caps" href="#servicos">Serviços</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-caps text-label-caps" href="#sobre">Sobre</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-caps text-label-caps" href="#manifesto">Manifesto</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-caps text-label-caps" href="#contato">Contato</a>
-</div>
-<a href="https://wa.me/5548996107028?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." target="_blank" class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:scale-95 duration-200 ease-in-out transition-all inline-block">Falar com Especialista</a>
-</nav>
-</header>
-<main>
-<!-- SEÇÃO 1: HERO (Fundo Escuro) -->
-<section class="bg-primary-container text-on-primary py-stack-lg min-h-[85vh] flex items-center relative overflow-hidden">
-<!-- Subtle atmospheric noise/gradient background -->
-<div class="absolute inset-0 opacity-10 pointer-events-none">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"></div>
-</div>
-<div class="max-w-container-max mx-auto px-margin-x w-full relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-8">
-<span class="inline-block mb-6 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-label-caps text-label-caps text-on-primary-container">ESTRUTURA DIGITAL PARA NEGÓCIOS EM CRESCIMENTO</span>
-<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-stack-sm leading-tight max-w-4xl">Negócios excelentes merecem uma presença digital à altura.</h1>
-<p class="font-body-lg text-body-lg text-on-primary-container mb-stack-md max-w-2xl opacity-90">
-                            Ajudamos negócios a organizarem sua estrutura digital para transmitir mais confiança, ganhar eficiência e se prepararem para crescer.
-                        </p>
-<div class="flex flex-col sm:flex-row gap-4"><a href="https://wa.me/5548996107028?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." target="_blank" class="bg-white text-primary px-10 py-5 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 transition-transform inline-block text-center">Solicitar diagnóstico</a><a href="https://wa.me/5548996107028?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." target="_blank" class="border border-white/30 text-white px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-white/5 transition-colors inline-block text-center">Falar com a LUP</a></div>
-</div>
-</div>
-<div class="mt-stack-lg pt-stack-sm border-t border-white/10 flex flex-wrap gap-8 md:gap-16">
-<div class="flex items-center space-x-3">
-<span class="material-symbols-outlined text-white/40" data-icon="hub">hub</span>
-<span class="font-label-caps text-label-caps text-white/60">Organização</span>
-</div>
-<div class="flex items-center space-x-3">
-<span class="material-symbols-outlined text-white/40" data-icon="architecture">architecture</span>
-<span class="font-label-caps text-label-caps text-white/60">Estrutura</span>
-</div>
-<div class="flex items-center space-x-3">
-<span class="material-symbols-outlined text-white/40" data-icon="bolt">bolt</span>
-<span class="font-label-caps text-label-caps text-white/60">Tecnologia</span>
-</div>
-</div>
-</div>
-</section>
-<!-- SEÇÃO 2: SERVIÇOS (Fundo Claro) -->
-<section class="bg-surface py-stack-lg" id="servicos">
-<div class="max-w-container-max mx-auto px-margin-x">
-<div class="mb-stack-lg max-w-3xl">
-<h2 class="font-headline-lg text-headline-lg mb-6">Estruturas digitais que geram valor real.</h2>
-<p class="font-body-lg text-body-lg text-secondary">
-                        Não vendemos apenas ferramentas. Criamos estruturas digitais que ajudam empresas a crescer de forma organizada.
-                    </p>
-</div>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="reveal group bg-surface-container-lowest p-8 rounded-xl border border-black/5 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:shadow-black/[0.03] transition-all duration-500 min-h-[300px] active">
-<div>
-<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" data-icon="branding_watermark">branding_watermark</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Presença Profissional</h3>
-<p class="text-secondary text-body-sm leading-relaxed">
-                                Sites, landing pages, domínio próprio e e-mail profissional para transmitir confiança e credibilidade.
-                            </p>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="reveal group bg-surface-container-lowest p-8 rounded-xl border border-black/5 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:shadow-black/[0.03] transition-all duration-500 min-h-[300px] active" style="transition-delay: 100ms;">
-<div>
-<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Atendimento Organizado</h3>
-<p class="text-secondary text-body-sm leading-relaxed">
-                                WhatsApp Business estruturado, canais centralizados e processos claros para atender melhor seus clientes.
-                            </p>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="reveal group bg-surface-container-lowest p-8 rounded-xl border border-black/5 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:shadow-black/[0.03] transition-all duration-500 min-h-[300px] active" style="transition-delay: 200ms;">
-<div>
-<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" data-icon="automation">automation</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Automação Inteligente</h3>
-<p class="text-secondary text-body-sm leading-relaxed">
-                                Automações simples e práticas que reduzem tarefas manuais repetitivas e economizam o tempo da sua equipe.
-                            </p>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="reveal group bg-surface-container-lowest p-8 rounded-xl border border-black/5 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:shadow-black/[0.03] transition-all duration-500 min-h-[300px] active" style="transition-delay: 300ms;">
-<div>
-<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Gestão e Visibilidade</h3>
-<p class="text-secondary text-body-sm leading-relaxed">
-                                Dashboards, indicadores e ferramentas estruturadas para acompanhar de perto o crescimento do seu negócio.
-                            </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- SEÇÃO 3: SOBRE A LUP (Fundo Claro/Suave) -->
-<section class="bg-surface-container-low py-stack-lg" id="sobre">
-<div class="max-w-container-max mx-auto px-margin-x">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-6 reveal active">
-<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Negócios excelentes merecem uma estrutura à altura.</h2>
-<div class="space-y-6">
-<p class="font-body-lg text-body-lg text-on-surface">
-                                Todos os dias encontramos empresas incríveis que entregam um trabalho excepcional, mas ainda operam com uma presença digital improvisada. A LUP nasceu para ajudar a mudar isso. 
-                            </p>
-<p class="font-body-md text-body-md text-secondary">
-                                Através de organização, estrutura e tecnologia, ajudamos negócios a transmitirem a mesma qualidade que já entregam aos seus clientes de forma presencial ou em seus produtos.
-                            </p>
-<div class="p-6 border-l-2 border-primary bg-white/50 rounded-r-lg italic text-on-surface-variant font-body-md">"Não criamos apenas sites. Organizamos a presença digital de empresas que já entregam valor e precisam transmitir isso com mais profissionalismo."</div>
-</div>
-</div>
-<div class="lg:col-span-6 reveal active" style="transition-delay: 200ms;">
-<div class="relative rounded-2xl overflow-hidden shadow-2xl">
-<img alt="LUP. Workspace" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvx8I79-XEeFLP73yDv4IjgMXuQxt1UGhY0QYmpQybXHMBVONZIQAlrcksp8RKjFstHTpytzUKf_NTuzCFWAY4fcHLRnwhlfPLklEUlyStapivz4jZHh2wEXliyybdDMKVBur0dXtAEMecSMIBHN1iRWJx45jGMYx4h6uhO31rEeTQ1_y2wbExwbNP8rKmczjzjKAF9RdJ529wYSGRZY061EV-r5xN1C3gBLc2HLHDOjcOCgeVwxNFmHf39">
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- SEÇÃO 4: MANIFESTO (Fundo Escuro) -->
-<section class="bg-primary py-stack-lg text-on-primary" id="manifesto">
-<div class="max-w-container-max mx-auto px-margin-x text-center">
-<div class="max-w-4xl mx-auto">
-<span class="font-label-caps text-label-caps text-on-primary-container mb-8 block opacity-60">NOSSA CRENÇA</span>
-<h2 class="font-headline-lg text-headline-lg mb-stack-md">Acreditamos no potencial dos pequenos negócios.</h2>
-<p class="font-headline-md text-headline-md font-light leading-relaxed text-on-primary-container opacity-90 mb-12">
-                        Existem milhares de empresas excelentes que poderiam crescer mais. Não por falta de talento. Não por falta de esforço. Mas por falta de estrutura. 
-                    </p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
-<div class="reveal p-8 border border-white/10 rounded-xl bg-white/5 active">
-<h4 class="font-headline-sm text-headline-sm mb-4">Confiança</h4>
-<p class="text-body-sm opacity-70">A LUP existe para reduzir a distância entre a qualidade de um negócio e a forma como ele é percebido pelo mercado. Organização gera confiança.</p>
-</div>
-<div class="reveal p-8 border border-white/10 rounded-xl bg-white/5 active" style="transition-delay: 150ms;">
-<h4 class="font-headline-sm text-headline-sm mb-4">Crescimento</h4>
-<p class="text-body-sm opacity-70">Não trabalhamos com improvisos. Criamos pilares sólidos onde cada ferramenta tem seu papel. Estrutura sólida gera crescimento sustentável.</p>
-</div>
-<div class="reveal p-8 border border-white/10 rounded-xl bg-white/5 active" style="transition-delay: 300ms;">
-<h4 class="font-headline-sm text-headline-sm mb-4">Resultados</h4>
-<p class="text-body-sm opacity-70">Usamos tecnologia para servir ao negócio, nunca o contrário. Tecnologia bem aplicada acelera seus resultados reais.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- SEÇÃO 5: CONTATO (Fundo Escuro/Container) -->
-<section class="bg-surface py-stack-lg" id="contato">
-<div class="max-w-container-max mx-auto px-margin-x">
-<div class="bg-primary-container rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-<div class="lg:w-1/2 p-12 lg:p-20 text-on-primary flex flex-col justify-between">
-<div><h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Vamos conversar.</h2><p class="font-body-lg text-body-lg opacity-80 mb-12">Conte um pouco sobre seu negócio. Vamos entender seu momento atual e mostrar como podemos ajudar a construir uma presença digital mais profissional, organizada e preparada para crescer.</p></div>
-<div class="space-y-6"><div class="flex items-center space-x-4"><span class="material-symbols-outlined text-white/40">mail</span><span class="font-body-md">contato@lupstudio.com.br</span></div><div class="flex items-center space-x-4"><span class="material-symbols-outlined text-white/40">location_on</span><span class="font-body-md">Florianópolis • SC</span></div></div>
-</div>
-<div class="lg:w-1/2 bg-white p-12 lg:p-20"><div class="flex flex-col items-center justify-center h-full"><a href="https://wa.me/5548996107028?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." target="_blank" class="w-full bg-primary text-white py-5 rounded-full font-label-caps text-label-caps font-bold hover:scale-[0.98] transition-transform flex items-center justify-center gap-3">Solicitar Diagnóstico<span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/20">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-x py-stack-sm w-full max-w-container-max mx-auto">
-<div class="mb-4 md:mb-0"><div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary mb-2">LUP.</div><p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant opacity-70">© 2026 LUP. Organização, estrutura e tecnologia para negócios em crescimento.</p></div>
-<div class="flex space-x-8"><a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="https://www.instagram.com/lup_studio/" target="_blank">Instagram</a><a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="https://wa.me/5548996107028" target="_blank">Contato</a></div>
-</div>
-</footer>
-<script>
-        // Scroll Reveal Logic
-        const observerOptions = {
-            threshold: 0.1
-        };
+<body>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">LUP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#para-quem">Para quem</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5548996107028?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." class="btn btn-primary" target="_blank">
+      Solicitar diagnóstico
+    </a>
+  </nav>
 
-        document.querySelectorAll('.reveal, .stagger-item').forEach(el => {
-            observer.observe(el);
-        });
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-eyebrow">Estruturação Digital</div>
+    <h1>Seu negócio é <em>excelente.</em><br>Sua presença digital precisa ser também.</h1>
+    <p class="hero-sub">A LUP Studio estrutura a presença digital de profissionais e pequenos negócios, para que transmitam a mesma credibilidade que entregam aos seus clientes.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5548996107028?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20da%20presen%C3%A7a%20digital%20do%20meu%20neg%C3%B3cio." class="btn btn-primary" target="_blank">
+        Solicitar diagnóstico gratuito
+      </a>
+      <a href="#planos" class="btn btn-outline">Ver planos</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">10<span>dias</span></div>
+        <div class="stat-label">Prazo de entrega<br>do plano START</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">3<span>+</span></div>
+        <div class="stat-label">Canais digitais<br>estruturados</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100<span>%</span></div>
+        <div class="stat-label">Foco em<br>pequenos negócios</div>
+      </div>
+    </div>
+  </section>
 
-        // Simple smooth header behavior
-        let lastScrollTop = 0;
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > 100) {
-                header.classList.add('shadow-sm');
-            } else {
-                header.classList.remove('shadow-sm');
-            }
-            lastScrollTop = scrollTop;
-        });
-    </script>
+  <div class="divider"></div>
 
+  <!-- PROBLEMA -->
+  <section class="problema" id="sobre">
+    <div class="container">
+      <div class="problema-inner">
+        <div class="fade-in">
+          <p class="section-eyebrow">O problema</p>
+          <h2 class="section-title">Muitos negócios excelentes passam despercebidos.</h2>
+          <ul class="problema-list">
+            <li><span class="icon">📱</span> Instagram ativo, mas sem site ou estrutura própria</li>
+            <li><span class="icon">📞</span> WhatsApp pessoal misturado com atendimento profissional</li>
+            <li><span class="icon">🔍</span> Empresa invisível para quem pesquisa no Google</li>
+            <li><span class="icon">✉️</span> E-mail do Gmail como contato principal</li>
+            <li><span class="icon">🎨</span> Identidade visual inconsistente entre canais</li>
+          </ul>
+        </div>
+        <div class="problema-right fade-in">
+          <p class="problema-quote">A qualidade do seu trabalho <em>merece uma presença digital à altura.</em></p>
+          <p class="problema-desc">Quando um cliente potencial pesquisa seu nome ou profissão, o que ele encontra? Se a resposta não transmite a mesma confiança que você entrega pessoalmente, você está perdendo oportunidades todos os dias.</p>
+          <br>
+          <p class="problema-desc">A LUP existe para fechar essa lacuna — com diagnóstico, estrutura e implementação completa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</body></html>
+  <!-- COMO TRABALHAMOS -->
+  <section class="como">
+    <div class="container">
+      <div class="como-header fade-in">
+        <p class="section-eyebrow">Nosso método</p>
+        <h2 class="section-title">Simples. Estratégico. Funcional.</h2>
+        <p class="section-sub">Não entregamos peças isoladas. Estruturamos a presença digital como um sistema completo.</p>
+      </div>
+      <div class="steps fade-in">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-icon">🔍</div>
+          <h3>Diagnosticar</h3>
+          <p>Entendemos o negócio, seus objetivos e mapeamos os gaps da presença digital atual.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-icon">🏗️</div>
+          <h3>Estruturar</h3>
+          <p>Construímos a base digital completa — site, domínio, e-mail, Google Business e WhatsApp.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-icon">⚙️</div>
+          <h3>Organizar</h3>
+          <p>Conectamos canais e processos para reduzir complexidade e melhorar a experiência do cliente.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-icon">📈</div>
+          <h3>Evoluir</h3>
+          <p>Acompanhamos o crescimento e propomos melhorias contínuas conforme o negócio avança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="servicos-header fade-in">
+        <p class="section-eyebrow">O que entregamos</p>
+        <h2 class="section-title">Estruturas digitais que geram valor real.</h2>
+        <p class="section-sub">Cada entrega tem um propósito claro — transmitir credibilidade, organizar o atendimento e preparar o negócio para crescer.</p>
+      </div>
+      <div class="servicos-grid fade-in">
+        <div class="servico-card">
+          <div class="servico-icon">🌐</div>
+          <h3>Presença Profissional</h3>
+          <p>Landing pages e sites modernos, domínio próprio e e-mail profissional. Sua empresa transmite confiança desde o primeiro clique.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">💬</div>
+          <h3>Atendimento Organizado</h3>
+          <p>WhatsApp Business estruturado com mensagens automáticas, canais centralizados e processos claros para atender com mais profissionalismo.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">📍</div>
+          <h3>Visibilidade Local</h3>
+          <p>Google Business criado e otimizado para que seus clientes te encontrem facilmente na busca e no Maps.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">⚡</div>
+          <h3>Automação Inteligente</h3>
+          <p>Automações simples que eliminam tarefas repetitivas — formulários, notificações, organização de contatos e muito mais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="para-quem" id="para-quem">
+    <div class="container">
+      <div class="para-quem-inner">
+        <div class="fade-in">
+          <p class="section-eyebrow">Para quem é</p>
+          <h2 class="section-title">Para quem já entrega valor e quer transmitir isso.</h2>
+          <p class="section-sub" style="margin-bottom: 0;">A LUP atende profissionais e pequenos negócios que já possuem clientes, mas ainda operam com presença digital improvisada.</p>
+          <div class="perfis-grid">
+            <div class="perfil-tag"><span>🥗</span> Nutricionistas</div>
+            <div class="perfil-tag"><span>🏋️</span> Personal Trainers</div>
+            <div class="perfil-tag"><span>🏛️</span> Arquitetos</div>
+            <div class="perfil-tag"><span>🏠</span> Corretores</div>
+            <div class="perfil-tag"><span>🧠</span> Psicólogos</div>
+            <div class="perfil-tag"><span>💊</span> Clínicas</div>
+            <div class="perfil-tag"><span>🎨</span> Designers</div>
+            <div class="perfil-tag"><span>⚖️</span> Advogados</div>
+          </div>
+        </div>
+        <div class="para-quem-right fade-in">
+          <p style="font-size:13px; color: var(--gray3); text-transform: uppercase; letter-spacing: 0.1em; font-weight:600; margin-bottom: 16px;">Você se identifica com algum destes sinais?</p>
+          <div class="signal-card">
+            <span class="signal-icon">📱</span>
+            <div><strong>Instagram é sua única presença online</strong><p>Se o Instagram sair do ar hoje, os seus clientes ainda conseguem te encontrar?</p></div>
+          </div>
+          <div class="signal-card">
+            <span class="signal-icon">🔍</span>
+            <div><strong>Você não aparece bem no Google</strong><p>Clientes da sua cidade pesquisam sua profissão todos os dias — e encontram os concorrentes.</p></div>
+          </div>
+          <div class="signal-card">
+            <span class="signal-icon">💼</span>
+            <div><strong>Sua presença não reflete seu trabalho</strong><p>Você entrega um serviço de excelência, mas o que o cliente vê online não transmite isso.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="planos" id="planos">
+    <div class="container">
+      <div class="planos-header fade-in">
+        <p class="section-eyebrow">Investimento</p>
+        <h2 class="section-title">Escolha o plano certo para o seu momento.</h2>
+        <p class="section-sub">Comece com o essencial e evolua conforme o seu negócio cresce. Todos os planos incluem suporte contínuo.</p>
+      </div>
+      <div class="planos-grid fade-in">
+
+        <!-- START -->
+        <div class="plano-card">
+          <div class="plano-header">
+            <p class="plano-name">LUP START</p>
+            <p class="plano-sub">Estrutura digital essencial</p>
+            <div class="plano-price">
+              <p class="price-setup">Setup único · <strong style="color: var(--white)">R$ 890</strong></p>
+              <p class="price-recurrence">+ R$ 99/mês de manutenção</p>
+            </div>
+          </div>
+          <div class="plano-features">
+            <ul>
+              <li>Landing page profissional e responsiva</li>
+              <li>Domínio próprio registrado</li>
+              <li>E-mail profissional</li>
+              <li>WhatsApp Business configurado</li>
+              <li>Google Business criado e otimizado</li>
+              <li>Entrega em até 10 dias úteis</li>
+              <li>2 alterações por mês</li>
+              <li>Suporte via WhatsApp</li>
+            </ul>
+          </div>
+          <div class="plano-cta">
+            <a href="https://wa.me/5548996107028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20LUP%20START." class="btn btn-ghost" target="_blank">Começar com o START</a>
+          </div>
+        </div>
+
+        <!-- GROW -->
+        <div class="plano-card featured">
+          <div class="plano-badge">Mais popular</div>
+          <div class="plano-header">
+            <p class="plano-name">LUP GROW</p>
+            <p class="plano-sub">Crescimento e posicionamento</p>
+            <div class="plano-price">
+              <p class="price-setup">Setup único · <strong style="color: var(--white)">R$ 2.490</strong></p>
+              <p class="price-recurrence">+ R$ 247/mês de manutenção</p>
+            </div>
+          </div>
+          <div class="plano-features">
+            <ul>
+              <li>Tudo do plano START</li>
+              <li>Site institucional completo</li>
+              <li>Branding e identidade visual</li>
+              <li>Gestão de redes sociais</li>
+              <li>Automações</li>
+              <li>Posicionamento avançado no Google</li>
+              <li>Relatório trimestral</li>
+              <li>Suporte prioritário</li>
+            </ul>
+          </div>
+          <div class="plano-cta">
+            <a href="https://wa.me/5548996107028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20LUP%20GROW." class="btn btn-primary" target="_blank">Crescer com o GROW</a>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="plano-card consulta">
+          <div class="plano-header">
+            <p class="plano-name">LUP PRO</p>
+            <p class="plano-sub">Operação digital inteligente</p>
+            <div class="plano-price">
+              <p class="price-setup">Projeto personalizado</p>
+              <p class="price-main consulta-price">Sob consulta</p>
+              <p class="price-recurrence">Setup + recorrência customizada</p>
+            </div>
+          </div>
+          <div class="plano-features">
+            <ul>
+              <li>Tudo do plano GROW</li>
+              <li>Dashboards e relatórios personalizados</li>
+              <li>Automações avançadas</li>
+              <li>Integrações com sistemas externos</li>
+              <li>Fluxos digitais inteligentes</li>
+              <li>Acompanhamento estratégico mensal</li>
+              <li>Gerente de contas dedicado</li>
+            </ul>
+          </div>
+          <div class="plano-cta">
+            <a href="https://wa.me/5548996107028?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20LUP%20PRO." class="btn btn-outline" target="_blank">Falar sobre o PRO</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="container">
+      <div class="manifesto-inner fade-in">
+        <p class="section-eyebrow" style="text-align:center">Nossa crença</p>
+        <h2>Tecnologia existe para <em>servir ao negócio.</em> Nunca o contrário.</h2>
+        <p>Existem milhares de empresas excelentes que poderiam crescer mais. Não por falta de talento. Não por falta de esforço. Mas por falta de estrutura digital adequada.</p>
+        <p>A LUP nasceu para reduzir a distância entre a qualidade de um negócio e a forma como ele é percebido pelo mercado.</p>
+        <div class="manifesto-values">
+          <div class="manifesto-value"><div class="value-dot"></div><span class="value-label">Organização</span></div>
+          <div class="manifesto-value"><div class="value-dot"></div><span class="value-label">Estrutura</span></div>
+          <div class="manifesto-value"><div class="value-dot"></div><span class="value-label">Credibilidade</span></div>
+          <div class="manifesto-value"><div class="value-dot"></div><span class="value-label">Crescimento</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato-inner">
+        <div class="contato-left fade-in">
+          <p class="section-eyebrow">Vamos conversar</p>
+          <h2>Pronto para estruturar o <em>digital</em> do seu negócio?</h2>
+          <p>Preencha o formulário ao lado e entraremos em contato em até 24 horas para agendar um diagnóstico gratuito.</p>
+          <div class="contato-info">
+            <div class="contato-item">
+              <div class="contato-item-icon">✉️</div>
+              <a href="mailto:contato@lupstudio.com.br">contato@lupstudio.com.br</a>
+            </div>
+            <div class="contato-item">
+              <div class="contato-item-icon">📍</div>
+              <span>Florianópolis · SC</span>
+            </div>
+            <div class="contato-item">
+              <div class="contato-item-icon">💬</div>
+              <a href="https://wa.me/5548996107028" target="_blank">WhatsApp direto</a>
+            </div>
+            <div class="contato-item">
+              <div class="contato-item-icon">📸</div>
+              <a href="https://www.instagram.com/lup_studio/" target="_blank">@lup_studio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <div class="fade-in">
+          <div class="form-card">
+            <div id="form-content">
+              <p class="form-title">Solicitar diagnóstico gratuito</p>
+              <p class="form-subtitle">Responderemos em até 24 horas.</p>
+              <form id="contact-form" action="https://formsubmit.co/contato@lupstudio.com.br" method="POST">
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_subject" value="Novo lead — LUP Studio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="">
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="whatsapp">WhatsApp *</label>
+                    <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(48) 9 0000-0000" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail *</label>
+                  <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="profissao">Qual é a sua profissão ou negócio? *</label>
+                  <select id="profissao" name="Profissão" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option>Nutricionista</option>
+                    <option>Personal Trainer / Coach</option>
+                    <option>Psicólogo(a)</option>
+                    <option>Arquiteto(a)</option>
+                    <option>Corretor de Imóveis</option>
+                    <option>Médico(a) / Clínica</option>
+                    <option>Designer / Criativo</option>
+                    <option>Advogado(a)</option>
+                    <option>Outro prestador de serviço</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mensagem">Como posso ajudar? (opcional)</label>
+                  <textarea id="mensagem" name="Mensagem" placeholder="Conta um pouco sobre o seu negócio e o que você precisa..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit">Enviar e solicitar diagnóstico</button>
+                <p class="form-note">Seus dados são confidenciais e nunca serão compartilhados.</p>
+              </form>
+            </div>
+            <div class="form-success" id="form-success">
+              <div class="success-icon">✅</div>
+              <h3>Mensagem enviada!</h3>
+              <p>Entraremos em contato em até 24 horas para agendar o seu diagnóstico gratuito.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">LUP<span>.</span></div>
+    <p class="footer-copy">© 2026 LUP Studio · Florianópolis, SC</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/lup_studio/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5548996107028" target="_blank">WhatsApp</a>
+      <a href="mailto:contato@lupstudio.com.br">E-mail</a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form success handling (for same-page redirect with FormSubmit)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      document.getElementById('form-content').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+
+    // Update FormSubmit _next to include success param
+    const form = document.getElementById('contact-form');
+    if (form) {
+      const nextInput = form.querySelector('input[name="_next"]');
+      if (nextInput) nextInput.value = window.location.href.split('?')[0] + '?success=true';
+    }
+  </script>
+</body>
+</html>
